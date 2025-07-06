@@ -1,0 +1,283 @@
+/* Import the Open Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+/* Import the Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+/* Remove default margin and set a clean font for the whole page */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Use Open Sans as the default font */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Style the header area at the top of the page */
+header {
+  display: flex; /* Place items in a row */
+  justify-content: space-between; /* Space out logo and navigation */
+  align-items: center; /* Center items vertically */
+  padding: 20px 40px; /* Add space inside the header */
+  background: white; /* Set background color */
+  border-bottom: 1px solid #ddd; /* Add a thin line at the bottom */
+}
+
+/* Style the logo area */
+.logo {
+  display: flex; /* Place logo image and text in a row */
+  align-items: center; /* Center them vertically */
+}
+
+/* Set the logo image size and space next to the text */
+.logo img {
+  height: 40px; /* Set image height */
+  margin-right: 10px; /* Add space to the right of the image */
+}
+
+/* Style the navigation links */
+/* Increased margin to add more space between each link */
+nav a {
+  margin: 0 25px; /* Add more space between links (was 15px) */
+  text-decoration: none; /* Remove underline from links */
+  color: #222; /* Set link color */
+  font-weight: 500; /* Make text a bit bolder */
+}
+
+/* Add extra space between the last navigation link and the sign up button */
+nav a:last-of-type {
+  margin-right: 50px; /* 25px (new) + 10px (extra) */
+}
+
+/* Style the sign up button in the navigation */
+.signup-btn {
+  padding: 10px 30px; /* Add more space inside the button to make it wider */
+  background-color: #66a9d9; /* Set button color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Round the corners */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Show pointer on hover */
+  font-family: 'Open Sans', sans-serif; /* Use Open Sans for the button text */
+}
+
+.signup-btn:hover {
+  background-color: white;
+  color: #66a9d9;
+  border: 2px solid #66a9d9;
+  transition: all 0.2s ease;
+}
+
+/* Style the main hero section */
+.hero {
+  display: flex; /* Place image and callout side by side */
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  align-items: stretch; /* Stretch items to same height */
+  height: 89vh; /* Make hero section fill the full height of the viewport */
+  position: relative; /* Position relative for absolute children */
+}
+
+/* Wrap the image and gradient together */
+.hero-image-wrapper {
+  position: relative; /* Needed for absolute positioning of gradient */
+  width: 100%;
+  max-width: 65%;
+  /* Make sure it stays side by side with callout */
+  display: flex;
+}
+
+/* Style the image in the hero section */
+.hero img {
+  width: 100%; /* Make image fill its container */
+  display: block; /* Remove extra space below image */
+  max-width: 100%; /* Fill the wrapper */
+  object-fit: cover; /* Crop image to fill area */
+  object-position: left center; /* Align image to the left */;
+  height: auto; /* Keep image aspect ratio */
+}
+
+/* Overlay with a light gray horizontal gradient, only over the image */
+.hero-gradient {
+  position: absolute; /* This makes the overlay cover the hero image */
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 0%, #f0f0f0 100%);
+  opacity: 0.9; /* Makes the overlay see-through */
+  pointer-events: none; /* Lets users click through the overlay */
+}
+
+/* Style the yellow callout box */
+.callout {
+  background-color: #ffd000; /* Set background color */
+  padding: 30px 30px; /* Add space inside the box: 40px top/bottom, 30px left/right */
+  flex: 1; /* Take up remaining space */
+  display: flex; /* Use flex for vertical layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text inside */
+  max-width: 500px; /* Limit how wide the box can get */
+  margin: 0 auto; /* Center the box horizontally */
+  /* Remove any extra margin or padding on the right if present */
+}
+
+/* Style the main heading in the callout */
+.callout h1 {
+  font-size: 2.8em; /* Make heading large */
+  margin-top: 0;
+  margin-bottom: 10px; /* Add space below heading */
+  color: #3d77a1; /* Set text color */
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat for the heading */
+  line-height: 1.5; /* Add line spacing for easier reading */
+}
+
+/* Style the paragraph in the callout */
+.callout p {
+  font-size: 1.3em; /* Make text a bit larger */
+  color: #3b3b3b; /* Set text color */
+  margin-bottom: 40px; /* Add space below paragraph */
+  max-width: 270px; /* Limit line length */
+  font-family: 'Open Sans', sans-serif; /* Use Open Sans for callout paragraph */
+  line-height: 1.7; /* Add line spacing for easier reading */
+}
+
+/* Style the white donation box */
+.donate-box {
+  background: #fff; /* Set background color */
+  padding: 20px; /* Add space inside the box */
+  border-radius: 10px; /* Round the corners */
+  display: flex; /* Use flex for vertical layout */
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Add space between items */
+  width: 100%; /* Make box fill container */
+  max-width: 300px; /* Limit box width */
+}
+
+/* Style the heading in the donation box */
+.donate-box h3 {
+  text-align: center; /* Center the text */
+  margin: 0; /* Remove default margin */
+  background: #66a9d9; /* Set background color */
+  color: white; /* Set text color */
+  padding: 10px; /* Add space inside heading */
+  border-radius: 5px 5px 0 0; /* Round top corners */
+  font-family: 'Open Sans', sans-serif; /* Use Open Sans for donation box heading */
+}
+
+/* Style the row of donation buttons */
+.donate-options {
+  display: flex; /* Place buttons in a row */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: space-around; /* Space out buttons */
+  gap: 10px; /* Add space between buttons */
+  padding: 10px; /* Add space inside the container */
+}
+
+/* Style each donation button */
+.donate-options button {
+  flex: 1 1 40%; /* Make buttons flexible in size */
+  padding: 10px; /* Add space inside button */
+  border: 2px solid #000; /* Add a black border */
+  background-color: #f9f9f9; /* Set background color */
+  border-radius: 10px; /* Round the corners */
+  font-size: 1em; /* Set font size */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+
+/* Make the layout responsive for small screens */
+@media (max-width: 768px) {
+header {
+  flex-direction: column;
+  align-items: center; /* center content */
+  padding: 10px 10px 5px 10px; /* top right bottom left */
+}
+
+.logo {
+  justify-content: center;
+}
+
+.logo img {
+  height: 28px; /* slightly smaller */
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; /* was 6–12px before, now tighter */
+  margin-top: 4px;
+}
+
+nav a {
+  margin: 0 10px; /* reduce horizontal spacing between links */
+  font-size: 0.8rem;
+  padding: 2px 0;
+}
+
+nav a:last-of-type {
+  margin-right: 15px;
+}
+
+.signup-btn {
+  font-size: 0.75rem;
+  padding: 5px 10px; /* slightly narrower */
+}
+
+  .hero {
+  height: auto; /* removes fixed viewport height */
+  flex-direction: column;
+}
+
+  .hero-image-wrapper {
+    max-width: 100%;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    object-position: center center;
+  }
+
+.hero-image-wrapper,
+.callout {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.callout {
+  padding: 20px;
+  overflow: visible; /* just in case something is being clipped */
+}
+
+   .callout h1 {
+  font-size: 1.8em;
+  margin: 5px 0;
+  line-height: 1.2;
+}
+
+.callout p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.donate-box {
+  max-width: 90%;
+  padding: 12px;
+}
+}
+
+.donate-options button {
+  transition: all 0.2s ease;
+}
+
+.donate-options button:hover {
+  background-color: #66a9d9;
+  color: white;
+  border-color: #66a9d9;
+}
